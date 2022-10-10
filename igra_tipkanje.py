@@ -23,10 +23,15 @@ def igra():
            crka = izbor_random_crke()
     print(pravilno)
 
-def casovnik(cas = 90):
+def casovnik(cas):
     while cas > 0:
         time.sleep(1)
         cas -= 1
     print('Čas se je iztekel. Igre je konec')
+
+def besede_na_minuto(st_besed,cas):
+    return (st_besed / cas) * 60
+
+
 
 
