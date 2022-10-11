@@ -32,7 +32,8 @@ def casovnik(cas):
 def besede_na_minuto(st_besed,cas):
     return (st_besed / cas) * 60
 
-
+def cas():
+    pass
 
 
 
