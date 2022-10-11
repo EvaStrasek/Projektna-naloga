@@ -35,3 +35,6 @@ def besede_na_minuto(st_besed,cas):
 
 
 
+
+
+
