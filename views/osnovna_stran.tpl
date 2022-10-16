@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hitrostno tipkanje</title>
-    <meta charset = utf-8>
-    <meta name = 'viewport' content = 'width=device-width initial-scale=1.0'>
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css'>
-    <script defer src='https://use.fontawesome.com/releases/v5.3.1/js/all.js'></script>
-    <style>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Hitrostno tipkanje</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css'>
+  <script defer src='https://use.fontawesome.com/releases/v5.3.1/js/all.js'></script>
+  <style>
     body {background-color: green}
-    p {
-      color: white
-    }
     button {
       background-color:white;
       color:00FF00;
       border-radius:5px
     }
-    </style>
-  </head>
-  <body>
-    <nav class='navbar is-light'>
-      <div class='container'>
+  </style>
+</head>
+
+<body>
+  <nav class='navbar is-light'>
+    <div class='container'>
+      <div class='navbar-brand'>
         <span class='navbar-item'>
           <span class='icon'>
             <i class="fas fa-clipboard-check"></i>
@@ -35,11 +35,11 @@
           </span>
           <span>Eva Strašek</span>
         </a>
-      </div>
-    </nav>
-    <section class="section">
-      {{!base}}
-    </section>
-    <footer>© 2022, Eva Strašek</footer>
-  </body>
+    </div>
+  </nav>
+  <section class="section">
+    {{!base}}
+  </section>
+  <footer>© 2022, Eva Strašek</footer>
+</body>
 </html>
