@@ -1,5 +1,5 @@
 import bottle
-
+from igra_tipkanje import Igra
 
 @bottle.get('/')
 def zacetna_stran():
