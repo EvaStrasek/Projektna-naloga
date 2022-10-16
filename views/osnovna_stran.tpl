@@ -16,6 +16,6 @@
   </head>
   <body>
     {{!base}}
-    <footer>© 2021, Eva Strašek</footer>
+    <footer>© 2022, Eva Strašek</footer>
   </body>
 </html>

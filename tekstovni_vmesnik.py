@@ -1,7 +1,7 @@
 import igra_tipkanje
 
-def start(cas):
-    navodila = f'Na voljo imaš {cas}s da natipkaš čim več besed. Za začetek igre klikni gumb Start.'  
+def start():
+    navodila = 'Na voljo imaš {cas}s da natipkaš čim več besed. Za začetek igre klikni gumb Start.'  
     print(navodila)
 
 def konec():

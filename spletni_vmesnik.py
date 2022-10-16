@@ -1,51 +1,10 @@
-from tkinter import *
 import bottle
-import time
-import igra_tipkanje
-
-okno = Tk()
-okno.title("Hitrostno tipkanje")
-okno.configure(bg = "dark green")
-okno.geometry("{0}x{1}+0+0".format(okno.winfo_screenwidth(), okno.winfo_screenheight()))
-
-zacetna_vrstica = Label(okno, text = "Za začetek igre klikni gumb Start")
-zacetna_vrstica.pack()
-
-#gumb za start
-def start_button():
-    vrstica = Label(okno, text = "Igra se je začela!")
-    vrstica.pack()
-
-start_button = Button(okno, text = 'Start',padx = 70,pady = 30, command = start_button)
-start_button.pack(side = TOP)
-
-#Typebox
-#type_box = Entry(okno,width = 60)
-#type_box.pack()
 
 
-#izbira za casovnik
-vrstica_za_izbiro = Label(okno, text = 'Izberi pojubno časovno omejitev za igro:')
-vrstica_za_izbiro.pack()
-moznosti_za_casovnik = ['1 min', '2 min', '5 min']
+@bottle.get('/')
+def zacetna_stran():
+    return bottle.template('zacetna_stran.tpl')
 
-def nastavitev_casovnika(event):
-    vrstica1 = Label(okno, text=moznosti.get())
-    if moznosti.get() == '1 min':
-        #casovnik(60)
-        pass
-    if moznosti.get() == '2 min':
-        pass
-    else:
-        pass
-
-moznosti = StringVar()
-moznosti.set(moznosti_za_casovnik[0])
-
-izbira = OptionMenu(okno, moznosti, *moznosti_za_casovnik, command = nastavitev_casovnika)
-izbira.pack()
+bottle.run(debug = True,reload = True)
 
 
-
-
-okno.mainloop()
