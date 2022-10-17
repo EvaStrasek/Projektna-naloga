@@ -19,18 +19,18 @@
 
 <body>
   <nav class="navbar is-light">
-    <div class='container'>
-      <div class='navbar-brand'>
-        <span class='navbar-item'>
-          <span class='icon'>
+    <div class="container">
+      <div class="navbar-brand">
+        <span class="navbar-item">
+          <span class="icon">
             <i class="fas fa-clipboard-check"></i>
           </span>
           <strong>Hitrostno tipkanje</strong>
         </span>
       </div>
-      <div class='navbar-end'>
-        <a class='navbar-item' href='https://github.com/EvaStrasek/'>
-          <span class='icon'>
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/EvaStrasek/">
+          <span class="icon">
             <i class="fab fa-github"></i>
           </span>
           <span>Eva Strašek</span>
