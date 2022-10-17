@@ -2,7 +2,7 @@
 % import igra_tipkanje
 % rebase('osnovna_stran.tpl')
 <nav>
-  <div>tekstovni_vmesnik.start()</div>
+  <div></div>
   <button class = 'button'>START</button>
 
 </nav>
