@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <style>
-    body {background-color: green}
+    body,html {background-color: green;
+    color:white;
+    height:100vh;}
+
     button {
       background-color:white;
       color:00FF00;
@@ -40,6 +43,5 @@
   <section class="section">
     {{!base}}
   </section>
-  <footer>© 2022, Eva Strašek</footer>
 </body>
 </html>

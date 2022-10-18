@@ -1,7 +1,7 @@
 from encodings import utf_8
 import random
 import datetime
-
+import json
 
 
 class Igra():
@@ -14,7 +14,7 @@ class Igra():
     def preberi_datoteko(datoteka):
         with open(datoteka,'r',encoding='utf-8') as f:
             besedilo = []
-            vrstice = f.load()
+            vrstice = json.load(f)
             for i in vrstice:
                 besedilo.append(i)
         return besedilo
@@ -47,7 +47,7 @@ class Tipkanje():
         self.st_besed_v_povedi = 0
         self.st_vrstic = 0
     
-    def igra(self,st_besed_v_povedi,st_vrstic):
+    def nova_igra(self,st_besed_v_povedi,st_vrstic):
         self.igre = []
         self.trenutna_igra = 0
         self.st_besed_v_povedi = st_besed_v_povedi
@@ -55,10 +55,15 @@ class Tipkanje():
 
         i = 0
         while i < st_vrstic:
-            igra = Igra.igra(st_besed_v_povedi)
+            igra = Igra.nova_igra(st_besed_v_povedi)
             self.igre.append(igra)
             i += 1
         return self.trenutna_igra
+
+besedilo1 = Igra.preberi_datoteko("besedilo1.json")
+besedilo2 = Igra.preberi_datoteko("besedilo2.json")
+besedilo3 = Igra.preberi_datoteko("besedilo3.json")
+
     
 def besede_na_minuto(st_besed,cas):
     return int((st_besed / cas) * 60)
