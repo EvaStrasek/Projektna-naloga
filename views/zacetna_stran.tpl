@@ -2,11 +2,11 @@
 % import igra_tipkanje
 % rebase('osnovna_stran.tpl')
 <nav class="level">
-  <div>
+  <div class=" box center">
     <form action="/nova-igra" method="POST">
       <div>Izberite si poljubno težavnost igre nato pa za začetek igre kliknite gumb Start</div>
       <div>
-          Težavnost
+          Težavnost:
           <select name="tezavnost" id="tezavnost">
             %for tezavnost in tezavnosti:
             <option value="{{tezavnost}}">{{tezavnost}}</option>
