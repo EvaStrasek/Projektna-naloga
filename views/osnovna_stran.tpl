@@ -13,9 +13,13 @@
     height:100vh;}
 
     button {
-      background-color:white;
-      color:00FF00;
-      border-radius:5px
+      color: #00FF00;
+      border-radius: 5px;
+      border-color: white;
+    }
+    .center {
+      margin: auto;
+      width: 60%;
     }
   </style>
 </head>
@@ -32,6 +36,7 @@
         </span>
       </div>
       <div class="navbar-end">
+        <button class="btn"><i class="fa fa-home"></i></button>
         <a class="navbar-item" href="https://github.com/EvaStrasek/">
           <span class="icon">
             <i class="fab fa-github"></i>

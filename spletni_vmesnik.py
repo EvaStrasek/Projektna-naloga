@@ -28,6 +28,14 @@ def preveri_besedilo():
     igra_tipkanje.pravilnost_besed(besedilo)
     bottle.redirect('/igra')
 
+@bottle.post('/konec-igre')
+def konec_igre():
+    igra_tipkanje.konec_igre(igra_tipkanje.self)
+    cas = igra_tipkanje.koncni_cas - igra_tipkanje.zacetni_cas
+    wpm = igra_tipkanje.besede_na_minuto(cas)
+    return bottle.template('koncna_stran.tpl')
+
+
 
 
 
