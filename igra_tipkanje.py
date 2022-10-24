@@ -2,8 +2,24 @@ from encodings import utf_8
 import random
 import datetime
 import json
-#from tkinter.tix import Tree
+#import os
 
+
+class Stanje():
+
+    def __init__(self):
+        self.igre = {}
+
+    def nova_igra(self, uporabnisko_ime, tezavnost):
+        igra = Igra()
+        igra.nova_igra(tezavnost)
+
+        self.igre[uporabnisko_ime] = igra
+
+        # self.igre.append(uporabnisko_ime[igra])
+
+    def pridobi_igro(self, uporabnisko_ime):
+        return self.igre[uporabnisko_ime]
 
 class Igra():
     
@@ -13,6 +29,8 @@ class Igra():
         self.koncni_cas = ''
         self.polje_povedi = []
         self.trenutni_indeks = 0
+        self.st_napak = 0
+        self.id_igre = ''
 
     def preberi_datoteko(self,datoteka):
         with open(datoteka,'r',encoding='utf-8') as f:
@@ -29,7 +47,7 @@ class Igra():
     def izbor_random_crke(self):
         crke = 'ABCČDEFGHIJKLMNOPQRSŠTUVWXYZŽ'
         i = 0
-        for i in range(20):
+        for i in range(5):
             self.polje_povedi.append(random.choice(crke))
         self.trenutno_besedilo = self.polje_povedi[0]
     
@@ -38,12 +56,9 @@ class Igra():
             self.koncni_cas = datetime.datetime.now()
             self.naslednje_besedilo()
             return True
-        else: return False
-
-    def stetje_napak(besede):
-        st_napak = 0
-       # stetje napak preko definicije pravilnost_besed
-        return st_napak
+        else: 
+            self.st_napak += 1
+            return False
 
     def pripravi_besedilo(self, datoteka):
         besedilo = self.preberi_datoteko(datoteka)
@@ -59,6 +74,9 @@ class Igra():
         self.trenutni_indeks = 0
         self.trenutno_besedilo = ''
         self.zacetni_cas = datetime.datetime.now()
+        self.koncni_cas = ''
+        self.st_napak = 0
+        
         
         if tezavnost == 'zelo lahko':
             self.izbor_random_crke()
@@ -70,20 +88,25 @@ class Igra():
             self.pripravi_besedilo('./besedila/besedilo-tezko.json')
 
     def naslednje_besedilo(self):
-        self.trenutni_indeks += 1
-        self.trenutno_besedilo = self.polje_povedi[self.trenutni_indeks]
+        if self.trenutni_indeks < len(self.polje_povedi) - 1:
+            self.trenutni_indeks += 1
+            self.trenutno_besedilo = self.polje_povedi[self.trenutni_indeks]
 
     def konec_igre(self):
-        if self.trenutni_indeks == len(self.polje_povedi):
+        if self.trenutni_indeks == len(self.polje_povedi) - 1:
             self.koncni_cas = datetime.datetime.now()
+            return True
+        else: return False
 
     def besede_na_minuto(self,cas):
         st_besed = 0
         seznam_besed = []
         for vrstica in self.polje_povedi:
-            vrstica = vrstica.split()
-            seznam_besed.append(vrstica)
+            vrstica = vrstica.split(' ')
+            for beseda in vrstica:
+                seznam_besed.append(beseda)
         st_besed = len(seznam_besed)
         return int((st_besed / cas) * 60)
+
 
 
