@@ -2,13 +2,17 @@
 % rebase('osnovna_stran.tpl')
 <nav>
   <div class="box center">
-    <div>Igre je konec!
+    <div class="mb-4">
+      Igre je konec!
     </div>
-    <div>Čas: {{cas}}
+    <div class="mb-4">
+      Čas: {{cas}} s
     </div>
-    <div>Število napak: {{st_napak}}
+    <div class="mb-4">
+      Število napak: {{st_napak}}
     </div>
-    <div>Povprečno število napisanih besed na minuto(wpm): {{wpm}}
+    <div class="mb-4">
+      Povprečno število napisanih besed na minuto (wpm): {{wpm}}
     </div>
   </div>
   
