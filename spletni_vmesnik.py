@@ -1,9 +1,10 @@
 import bottle
-from igra_tipkanje import Igra, Stanje
+from igra_tipkanje import Igra, Stanje, Rekord
 
 SIFRIRNI_KLJUC = 'toJeSifrirniKljuc'
 
 stanje_iger = Stanje()
+lestvica = Rekord()
 
 def stanje_uporabnika():
     uporabnisko_ime = bottle.request.get_cookie("uporabnisko_ime", secret=SIFRIRNI_KLJUC)
@@ -68,7 +69,22 @@ def konec_igre():
         st_napak = igra_tipkanje.st_napak
         cas = round((igra_tipkanje.koncni_cas - igra_tipkanje.zacetni_cas).total_seconds(),2)
         wpm = igra_tipkanje.besede_na_minuto(cas)
-        return bottle.template('koncna_stran.tpl', st_napak = st_napak, cas = cas, wpm = wpm)
+        if cas >= 60:
+            minute = cas // 60
+            sekunde = int(cas - (minute * 60))
+            cas = str(int(minute)) + ' min ' + str(sekunde) + ' s'
+        else:
+            cas = str(int(cas)) + ' s'
+        uporabnisko_ime = bottle.request.get_cookie("uporabnisko_ime", secret=SIFRIRNI_KLJUC)
+
+        lestvica.razvrsti_rekorde(igra_tipkanje.tezavnost,moj_rekord=igra_tipkanje.izpisi_rekord(uporabnisko_ime))
+        
+        igra_tipkanje = stanje_uporabnika()
+
+        novi_rekordi = lestvica.vrni_rekorde(igra_tipkanje.tezavnost)
+
+
+        return bottle.template('koncna_stran.tpl', st_napak = st_napak, cas = cas, wpm = wpm, novi_rekordi = novi_rekordi)
     else: bottle.redirect('/igra')
 
 @bottle.get("/img/<slika>")
