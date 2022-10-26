@@ -51,7 +51,7 @@ class Igra():
     def izbor_random_crke(self):
         crke = 'ABCČDEFGHIJKLMNOPQRSŠTUVWXYZŽ'
         i = 0
-        for i in range(5):
+        for i in range(21):
             self.polje_povedi.append(random.choice(crke))
         self.trenutno_besedilo = self.polje_povedi[0]
     
@@ -207,15 +207,6 @@ class Rekord():
             rekordi = self.rekordi_srednje
         elif tezavnost == 'tezko':
             rekordi = self.rekordi_tezko
-        # for i in range(1,6):
-        #     if rekordi[i]['Cas'] > moj_rekord['Cas']:
-        #         moj_rekord['ZaporednoMesto'] = i_0
-        #         rekordi[i]['ZaporednoMesto'] += 1
-        #     if rekordi[i]['Cas'] == moj_rekord['Cas'] and rekordi[i]['St_napak'] > moj_rekord['St_napak']:
-        #         moj_rekord['ZaporednoMesto'] = i_0
-        #         rekordi[i]['ZaporednoMesto'] += 1
-        #     else:
-        #         i_0 += 1
         rekordi.append(moj_rekord)
 
         rekordi.sort(key=lambda rekord: (rekord['Cas'], rekord['St_napak']))
