@@ -1,0 +1,10 @@
+[
+  {
+    "tezavnost": "zelo lahko",
+    "rekordi": [
+    ]
+  },
+  { "tezavnost": "lahko", "rekordi": [] },
+  { "tezavnost": "srednje", "rekordi": [] },
+  { "tezavnost": "tezko", "rekordi": [] }
+]
