@@ -16,7 +16,7 @@
         </div>
         <form autocomplete="off" action="/preveri-besedilo" method="POST">
             Vnos: <input type = "text" class="input is-big is rounded" autofocus name="besedilo">
-            <input type="submit" class="button is-info" value="Vpiši">
+            <input type="submit" class="button-is-info button2" value="Vpiši">
         </form>
     </div>
 </nav>

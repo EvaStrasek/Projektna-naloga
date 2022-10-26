@@ -14,14 +14,43 @@
       height: 100%;
       }
     
-    button {
-      color: #00FF00;
+    .button1 {
+      color: white;
       border-radius: 5px;
       border-color: gray;
+      font-size: 25px;
+      width: 120px;
+      height: 40px;
+      background-color: grey;
+      text-align: center;
+      margin-top: 20px;
+      margin:auto;
     }
+
+    .button2 {
+      color: white;
+      border-radius: 5px;
+      border-color: #ADD8E6;
+      font-size: 16px;
+      width: 100px;
+      height: 35px;
+      background-color: #0096FF;
+      text-align: center;
+      margin-top : 6px;
+    }
+
+    .h3{
+      font-family: "Impact";
+      color: blue;
+      text-align: center;
+      font-weight: bold;
+      font-size: 40px;
+    }
+
     .center {
       margin: auto;
       width: 60%;
+      font-size: 18px;
     }
   </style>
 </head>
