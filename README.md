@@ -4,8 +4,8 @@
 * Eva Strašek
 
 ## Opis
-V tem projektu lahko preizkusiš kako hitro lahko v čim krajšem času natipkaš čim več besed.<br>
-Najprej si izbereš svoj vzdevek/uporabniško ime nato lahko izbiraš lahko med težavnostmi:
+V tem projektu lahko preizkusiš, kako hitro lahko v čim krajšem času natipkaš čim več besed.<br>
+Najprej si izbereš svoj vzdevek/uporabniško ime, nato lahko izbiraš lahko med težavnostmi:
  * zelo lahko
  * lahko
  * srednje
